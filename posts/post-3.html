@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>示例文章三 · 常见问题</title>
+  <style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;margin:1.5rem;max-width:700px;color:#222}a{color:#0366d6}</style>
+</head>
+<body>
+  <header>
+    <h1>示例文章三：常见问题与排查</h1>
+    <div style="color:#666;margin-bottom:1rem">发布于 2025-11-04 · 分类：FAQ</div>
+  </header>
+
+  <main>
+    <h2>README 被当作首页</h2>
+    <p>如果没有 index.html 或 index.md，Pages（Jekyll）可能会把 README.md 渲染为目录首页。解决方法：添加 index.html（或禁用 Jekyll 并保留 .nojekyll）。</p>
+
+    <h2>自定义域 CNAME 问题</h2>
+    <p>添加 CNAME 文件并在 DNS 中配置 A/CNAME 记录，等待 DNS 生效。遇到证书问题，可以在 Pages 设置中查看域名与 HTTPS 状态。</p>
+  </main>
+
+  <nav style="margin-top:1rem"><a href="../index.html">&larr; 返回主页</a></nav>
+</body>
+</html>
