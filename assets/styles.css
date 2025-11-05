@@ -1,0 +1,70 @@
+:root{
+  --accent:#0366d6;
+  --muted:#666;
+  --maxw:900px;
+  --overlay: rgba(255,255,255,0.85);
+}
+
+/* 背景设置：优先使用本地 assets/bg.jpg，可替换为任意 URL */
+html,body{
+  height:100%;
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  color:#222;
+  background-color:#f6f8fa;
+  /* 如果想直接在 body 上设置背景：取消注释下一行并设置合适的 URL */
+  /* background: url('/assets/bg.jpg') center/cover no-repeat fixed; */
+}
+
+/* 我使用伪元素来实现背景 + 遮罩，使内容区保持白底或半透明遮罩，文字更清晰 */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background-image: url('/assets/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(.95) blur(0);
+  /* 如果你使用外部图片，替换上面的 URL 为完整外链，例如:
+     background-image: url('https://example.com/path/to/image.jpg');
+  */
+}
+
+/* 可选：深色背景时使用半透明暗层，或浅背景使用亮层，根据图片调整透明度 */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7));
+  /* 如果图片较暗，改成 rgba(0,0,0,0.35) 以增加对比度 */
+}
+
+/* 页面主体容器 */
+.wrap{
+  max-width:var(--maxw);
+  margin:2rem auto;
+  background: rgba(255,255,255,0.9); /* 内容区白色背景，同样可改为 var(--overlay) */
+  border-radius:10px;
+  padding:1.25rem 1.5rem;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+}
+
+/* 保持之前样式 */
+header h1{ color:var(--accent); margin:0 0 .25rem 0 }
+header p{ margin:0 0 1.25rem 0; color:var(--muted) }
+.posts{ list-style:none; padding:0; margin:0 }
+.post{ padding:1rem; border:1px solid #e6e6e6; border-radius:8px; margin-bottom:1rem; transition:box-shadow .15s }
+.post:hover{ box-shadow:0 6px 18px rgba(2,6,23,.06) }
+.post h2{ margin:0 0 .35rem 0; font-size:1.25rem }
+.meta{ color:var(--muted); font-size:.9rem; margin-bottom:.6rem }
+.excerpt{ color:#333; margin:0 }
+a{ color:var(--accent); text-decoration:none }
+footer{ margin-top:2rem; color:var(--muted); font-size:.9rem }
+
+/* 响应式微调 */
+@media (max-width:640px){
+  .wrap{ margin:1rem; padding:1rem }
+}
