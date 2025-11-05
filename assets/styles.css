@@ -13,7 +13,7 @@ html,body{
   color:#222;
   background-color:#f6f8fa;
   /* 如果想直接在 body 上设置背景：取消注释下一行并设置合适的 URL */
-  /* background: url('/assets/bg.jpg') center/cover no-repeat fixed; */
+  background: url('/assets/bg.jpg') center/cover no-repeat fixed; 
 }
 
 /* 我使用伪元素来实现背景 + 遮罩，使内容区保持白底或半透明遮罩，文字更清晰 */
