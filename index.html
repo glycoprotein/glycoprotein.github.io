@@ -3,32 +3,56 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>glycoprotein</title>
+  <title>glycoprotein — 博客</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 2rem; color: #222 }
-    header h1 { color: #0366d6 }
-    main { max-width: 720px; line-height: 1.6 }
-    footer { margin-top: 2rem; font-size: 0.9rem; color: #666 }
-    a { color: #0366d6; text-decoration: none }
-    code { background:#f6f8fa; padding: 0.15rem 0.35rem; border-radius:4px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", monospace }
+    :root { --accent:#0366d6; --muted:#666; --maxw:900px }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 1.5rem; color:#222; display:flex; justify-content:center }
+    .wrap { max-width:var(--maxw); width:100% }
+    header h1 { color:var(--accent); margin:0 0 .25rem 0 }
+    header p { margin:0 0 1.25rem 0; color:var(--muted) }
+    .posts { list-style:none; padding:0; margin:0 }
+    .post { padding:1rem; border:1px solid #e6e6e6; border-radius:8px; margin-bottom:1rem; transition:box-shadow .15s }
+    .post:hover { box-shadow:0 6px 18px rgba(2,6,23,.06) }
+    .post h2 { margin:0 0 .35rem 0; font-size:1.25rem }
+    .meta { color:var(--muted); font-size:.9rem; margin-bottom:.6rem }
+    .excerpt { color:#333; margin:0 }
+    a { color:var(--accent); text-decoration:none }
+    nav a.back { font-size:.95rem; color:var(--muted) }
+    footer { margin-top:2rem; color:var(--muted); font-size:.9rem }
   </style>
 </head>
 <body>
-  <header>
-    <h1>欢迎来到 glycoprotein 的主页</h1>
-  </header>
-  <main>
-    <p>这是使用 GitHub Pages 托管的个人网站的初始页面。</p>
-    <p>要编辑此页面，请修改 <code>index.html</code> 并推送到主分支（main）。</p>
-    <p>仓库地址： <a href="https://github.com/glycoprotein/glycoprotein.github.io">https://github.com/glycoprotein/glycoprotein.github.io</a></p>
-    <h2>下一步建议</h2>
-    <ul>
-      <li>如果你想使用 Jekyll、Hugo 等静态站点生成器，可在此仓库添加相应配置文件。</li>
-      <li>如果使用自定义域，请创建 <code>CNAME</code> 文件并填入你的域名（见下方示例）。</li>
-    </ul>
-  </main>
-  <footer>
-    <p>&copy; 2025 glycoprotein</p>
-  </footer>
+  <div class="wrap">
+    <header>
+      <h1>glycoprotein 的博客</h1>
+      <p>主页概览 — 点击下方任一标题阅读完整文章。</p>
+    </header>
+
+    <main>
+      <ul class="posts">
+        <li class="post">
+          <h2><a href="posts/post-1.html">示例文章一：关于 glycoprotein 项目的简介</a></h2>
+          <div class="meta">2025-11-04 · 分类：项目介绍</div>
+          <p class="excerpt">介绍 glycoprotein 项目的目标、仓库结构与如何开始贡献。</p>
+        </li>
+
+        <li class="post">
+          <h2><a href="posts/post-2.html">示例文章二：如何配置 GitHub Pages</a></h2>
+          <div class="meta">2025-11-04 · 分类：教程</div>
+          <p class="excerpt">一步步教你如何把静态文件推送到仓库并在 Settings 中启用 Pages。</p>
+        </li>
+
+        <li class="post">
+          <h2><a href="posts/post-3.html">示例文章三：常见问题与排查</a></h2>
+          <div class="meta">2025-11-04 · 分类：FAQ</div>
+          <p class="excerpt">收集部署 Pages 时常见的错误与解决办法（比如 README 被当首页、CNAME 问题等）。</p>
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 glycoprotein · <a href="README.md">仓库说明</a></p>
+    </footer>
+  </div>
 </body>
 </html>
